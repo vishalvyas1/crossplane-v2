@@ -44,7 +44,8 @@ global:
   podLabels: {}
 
   # -- Additional labels to add to all resources
-  additionalLabels: {}
+  additionalLabels:
+    {}
     # app: argo-events
 
   # -- Toggle and define securityContext. See [values.yaml]
@@ -148,7 +149,8 @@ configs:
 
 # -- Array of extra K8s manifests to deploy
 ## Note: Supports use of custom Helm templates
-extraObjects: []
+extraObjects:
+  []
   # - apiVersion: secrets-store.csi.x-k8s.io/v1
   #   kind: SecretProviderClass
   #   metadata:
@@ -235,7 +237,8 @@ controller:
   podLabels: {}
 
   # -- Events controller container-level security context
-  containerSecurityContext: {}
+  containerSecurityContext:
+    {}
     # capabilities:
     #   drop:
     #     - all
@@ -337,7 +340,8 @@ controller:
       # -- Prometheus [MetricRelabelConfigs] to apply to samples before ingestion
       metricRelabelings: []
       # -- Prometheus ServiceMonitor selector
-      selector: {}
+      selector:
+        {}
         # prometheus: kube-prometheus
       # -- Prometheus ServiceMonitor namespace
       namespace: "" # "monitoring"
@@ -347,7 +351,7 @@ controller:
 ## Argo Events admission webhook
 webhook:
   # -- Enable admission webhook. Applies only for cluster-wide installation
-  enabled: false
+  enabled: true
 
   # -- Argo Events admission webhook name string
   name: events-webhook
@@ -401,7 +405,8 @@ webhook:
   port: 443
 
   # -- Event controller container-level security context
-  containerSecurityContext: {}
+  containerSecurityContext:
+    {}
     # capabilities:
     #   drop:
     #     - all
