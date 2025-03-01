@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: crossplane-v2
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: "https://github.com/vishalvyas1/crossplane-v2.git"
+    targetRevision: HEAD
+    path: "crossplane-setup"
+    helm:
+      parameters:
+        - name: namespaceOverride
+          value: "crossplane-system"
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: crossplane-system
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
