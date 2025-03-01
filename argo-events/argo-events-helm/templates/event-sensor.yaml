@@ -1,4 +1,4 @@
-apiVersion: argoproj.io/v1alpha1
+{% comment %} apiVersion: argoproj.io/v1alpha1
 kind: Sensor
 metadata:
   name: webhook-sensor
@@ -28,4 +28,4 @@ spec:
                     containers:
                       - name: triggered-container
                         image: busybox
-                        command: ["echo", "Webhook event received!"]
+                        command: ["echo", "Webhook event received!"] {% endcomment %}
