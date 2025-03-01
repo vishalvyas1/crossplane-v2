@@ -1,0 +1,7 @@
+---
+crossplane:
+  replicas: 1
+  provider:
+    packages:
+      - "xpkg.upbound.io/upbound/provider-aws-ec2:v1"
+  nameOverride: "crossplane-v2"
