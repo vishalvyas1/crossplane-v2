@@ -15,7 +15,7 @@ spec:
           value: "argo-events"
   destination:
     server: https://kubernetes.default.svc
-    namespace: argo-events
+    namespace: crossplane-system
   syncPolicy:
     automated:
       prune: true
