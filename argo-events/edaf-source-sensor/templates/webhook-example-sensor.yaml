@@ -35,7 +35,6 @@ spec:
                     container:
                       image: docker/whalesay:latest
                       command: [cowsay]
-                      {% comment %} args: ["{{inputs.parameters.message}}"] {% endcomment %}
           parameters:
             - src:
                 dependencyName: test-dep
