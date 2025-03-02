@@ -10,6 +10,6 @@ spec:
         targetPort: 13000
   webhook:
     example-webhook:
-      port: "12000"
+      port: "13000"
       endpoint: "/dummy"
       method: "POST"
