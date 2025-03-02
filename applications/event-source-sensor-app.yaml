@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: "https://github.com/vishalvyas1/crossplane-v2.git"
     targetRevision: HEAD
-    path: "argo-events/webhook-sensor"
+    path: "argo-events/edaf-source-sensor"
     helm:
       parameters:
         - name: namespaceOverride
