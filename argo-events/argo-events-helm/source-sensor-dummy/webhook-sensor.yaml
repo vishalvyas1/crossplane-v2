@@ -1,17 +1,17 @@
-apiVersion: argoproj.io/v1alpha1
-kind: Sensor
-metadata:
-  name: webhook-sensor
-  namespace: argo-events
-spec:
-  dependencies:
-    - name: example-dep
-      eventSourceName: webhook-source-dummy
-      eventName: example-webhook
-  triggers:
-    - template:
-        name: log-trigger
-        container:
-          image: alpine
-          command: ["/bin/sh", "-c"]
-          args: ["echo Received event: $(cat /argo/events/event.json)"]
+# apiVersion: argoproj.io/v1alpha1
+# kind: Sensor
+# metadata:
+#   name: webhook-sensor
+#   namespace: argo-events
+# spec:
+#   dependencies:
+#     - name: example-dep
+#       eventSourceName: webhook-source-dummy
+#       eventName: example-webhook
+#   triggers:
+#     - template:
+#         name: log-trigger
+#         container:
+#           image: alpine
+#           command: ["/bin/sh", "-c"]
+#           args: ["echo Received event: $(cat /argo/events/event.json)"]
